@@ -1,9 +1,11 @@
 const dataContainer = document.querySelector('.dataContainer')
 
 
+
+
 //promise
 function getData(){
-    document.getElementById('advise').innerHTML = 'Cargando...'
+    document.getElementById('advise').innerHTML = 'Load...'
     return new Promise((resolve, reject) => {
       resolve(traerDatos())
     })
@@ -95,6 +97,22 @@ function createItems(aux){
   tr.appendChild(img)
   
   dataContainer.appendChild(tr)
+  clearBtn()
+}
+
+
+//btn to clear data DOM
+function clearBtn(){
+  btn = document.getElementById('btn-clear')
+  btn.style.display = ''
+}
+
+function clearDom(){
+  
+  dataContainer.innerHTML = ''
+  btn = document.getElementById('btn-clear')
+  btn.style.display = 'none'
+
 }
 
   
